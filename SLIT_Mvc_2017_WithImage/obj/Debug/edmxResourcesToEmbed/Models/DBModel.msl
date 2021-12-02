@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BasicLayeredDB_DemoModelStoreContainer" CdmEntityContainer="BasicLayeredDB_DemoEntities">
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="BasicLayeredDB_DemoModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="FistName" ColumnName="FistName" />
+          <ScalarProperty Name="LasttName" ColumnName="LasttName" />
+          <ScalarProperty Name="Nic" ColumnName="Nic" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteStudent" FunctionName="BasicLayeredDB_DemoModel.Store.DeleteStudent" />
+    <FunctionImportMapping FunctionImportName="GetAllStudents" FunctionName="BasicLayeredDB_DemoModel.Store.GetAllStudents">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BasicLayeredDB_DemoModel.GetAllStudents_Result">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="FistName" ColumnName="FistName" />
+          <ScalarProperty Name="LasttName" ColumnName="LasttName" />
+          <ScalarProperty Name="Nic" ColumnName="Nic" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStudent" FunctionName="BasicLayeredDB_DemoModel.Store.GetStudent">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BasicLayeredDB_DemoModel.GetStudent_Result">
+          <ScalarProperty Name="FistName" ColumnName="FistName" />
+          <ScalarProperty Name="LasttName" ColumnName="LasttName" />
+          <ScalarProperty Name="Nic" ColumnName="Nic" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetStudentByID" FunctionName="BasicLayeredDB_DemoModel.Store.GetStudentByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BasicLayeredDB_DemoModel.GetStudentByID_Result">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="FistName" ColumnName="FistName" />
+          <ScalarProperty Name="LasttName" ColumnName="LasttName" />
+          <ScalarProperty Name="Nic" ColumnName="Nic" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetTable" FunctionName="BasicLayeredDB_DemoModel.Store.GetTable">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BasicLayeredDB_DemoModel.GetTable_Result">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="FistName" ColumnName="FistName" />
+          <ScalarProperty Name="LasttName" ColumnName="LasttName" />
+          <ScalarProperty Name="Nic" ColumnName="Nic" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertStudent" FunctionName="BasicLayeredDB_DemoModel.Store.InsertStudent" />
+    <FunctionImportMapping FunctionImportName="StudentReport" FunctionName="BasicLayeredDB_DemoModel.Store.StudentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BasicLayeredDB_DemoModel.StudentReport_Result">
+          <ScalarProperty Name="FistName" ColumnName="FistName" />
+          <ScalarProperty Name="LasttName" ColumnName="LasttName" />
+          <ScalarProperty Name="Nic" ColumnName="Nic" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateStudent" FunctionName="BasicLayeredDB_DemoModel.Store.UpdateStudent" />
+  </EntityContainerMapping>
+</Mapping>

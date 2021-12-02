@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BasicLayeredDB_DemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FistName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LasttName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ImageFile" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="BasicLayeredDB_DemoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <FunctionImport Name="DeleteStudent">
+      <Parameter Name="StudentID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllStudents" ReturnType="Collection(BasicLayeredDB_DemoModel.GetAllStudents_Result)" />
+    <FunctionImport Name="GetStudent" ReturnType="Collection(BasicLayeredDB_DemoModel.GetStudent_Result)" />
+    <FunctionImport Name="GetStudentByID" ReturnType="Collection(BasicLayeredDB_DemoModel.GetStudentByID_Result)">
+      <Parameter Name="StudentID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GetTable" ReturnType="Collection(BasicLayeredDB_DemoModel.GetTable_Result)" />
+    <FunctionImport Name="InsertStudent">
+      <Parameter Name="FistName" Mode="In" Type="String" />
+      <Parameter Name="LasttName" Mode="In" Type="String" />
+      <Parameter Name="Nic" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="ImageFile" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="StudentReport" ReturnType="Collection(BasicLayeredDB_DemoModel.StudentReport_Result)">
+      <Parameter Name="Nic" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateStudent">
+      <Parameter Name="StudentID" Mode="In" Type="Int64" />
+      <Parameter Name="FistName" Mode="In" Type="String" />
+      <Parameter Name="LasttName" Mode="In" Type="String" />
+      <Parameter Name="Nic" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="ImageFile" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAllStudents_Result">
+    <Property Type="Int64" Name="StudentID" Nullable="false" />
+    <Property Type="String" Name="FistName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LasttName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nic" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ImageFile" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="GetStudent_Result">
+    <Property Type="String" Name="FistName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LasttName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nic" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetStudentByID_Result">
+    <Property Type="Int64" Name="StudentID" Nullable="false" />
+    <Property Type="String" Name="FistName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LasttName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nic" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetTable_Result">
+    <Property Type="Int64" Name="StudentID" Nullable="false" />
+    <Property Type="String" Name="FistName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LasttName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nic" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ImageFile" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="StudentReport_Result">
+    <Property Type="String" Name="FistName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LasttName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Nic" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Gender" Nullable="true" MaxLength="10" />
+  </ComplexType>
+</Schema>
